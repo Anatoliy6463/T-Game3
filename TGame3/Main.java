@@ -6,6 +6,7 @@ package TGame3;
 import java.util.Scanner;
 public class Main {
     static int X, Y = 1;
+    static int armor, sword = 0;
     static int hp = 100;
     static int hunger = 0;
     static int persiki = 0;

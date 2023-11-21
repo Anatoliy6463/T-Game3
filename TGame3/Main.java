@@ -1,6 +1,7 @@
-/*MAIN FILE
+/* 
+ *  MAIN CLASS
  * Made by Anatoliy6463 on 20.11.2023
- * Version 0.03, 21.11.2023
+ * Version 0.0.1
  * Protected with Apache License 2.0
 */
 package TGame3;
@@ -8,7 +9,7 @@ import java.util.Scanner;
 public class Main {
     static int X, Y = 1;
     static int hp = 100;
-    static int hunger = 0;
+    static int hunger = 0;  
     static int persiki = 0;
     static int nektarin = 0;
     static char d = '\0';
@@ -173,5 +174,46 @@ public class Main {
                 }
             }
         }
+    }
+}
+/*
+ * SAVE CLASS
+ * PROTECTED BY GNU GPL V3
+ * MADE ON 20.11.2023, UPDATED ON 21.11.2023
+ * MADE BY ANATOLIY6463
+ */
+class Save {
+    static int X, Y;
+    static int hp;
+    static int hunger;
+    static int persiki;
+    static int nektarin;
+    static char d;
+    static String line;
+    static int money;
+    static boolean nektarin_effect, dragonTame;
+    static int k;
+    static int sword;
+    static int dragonhp;
+    static int effectK;
+    public static void save() {
+        X = Main.X;
+        Y = Main.Y;
+        hp = Main.hp;
+        hunger = Main.hunger;
+        persiki = Main.persiki;
+        nektarin = Main.nektarin;
+        d = Main.d;
+        line = Main.line;
+        money = Main.money;
+        nektarin_effect = Main.nektarin_effect;
+        dragonTame = Main.dragonTame;
+        k = Main.k;
+        sword = Main.sword;
+        dragonhp = Main.dragonhp;
+        effectK = Main.effectK;
+    }
+    public static void main(String[] args){
+        Main.saving();
     }
 }

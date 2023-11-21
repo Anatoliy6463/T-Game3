@@ -1,3 +1,9 @@
+/*
+    Saving class
+    Made by Antoliy6463 on 20.11.2023
+    Version v0.01
+    Protected by GNU GPL v3
+*/
 package TGame3;
 
 import java.util.Scanner;

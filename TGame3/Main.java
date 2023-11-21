@@ -1,6 +1,6 @@
 /*MAIN FILE
  * Made by Anatoliy6463 on 20.11.2023
- * Version 0.0.1
+ * Version 0.03, 21.11.2023
  * Protected with Apache License 2.0
 */
 package TGame3;
@@ -115,7 +115,6 @@ public class Main {
             if (X == 15 && Y == 5) {
                 shop();
             }
-            k++;
             if (X >= 20 && X <= 30 && Y >= 20 && Y <= 30 && dragonhp > 0 && dragonTame != true) {
                 System.out.println("Здесь живёт дракон!");
                 hp -= 5;
@@ -135,6 +134,42 @@ public class Main {
                     if (nektarin > 10) {
                         dragonTame = true;
                     }
+                }
+                if (X % 25 == 0 || Y % 25 == 0 || X % 25 == 0 && Y % 25 == 0) {
+                    Save.save();
+                    System.out.println("Данные сохранены");
+                }
+                k++;
+                if (k % 50 == 0) {
+                    Save.save();
+                    System.out.println("Автосохранение...");
+                }
+                if (hp < 0) {
+                    System.out.println("Game over\nЧтобы начать игру с начала, введите reset\nчтобы загрузиться с сохранения, введите checkpoint");
+                    line = sc.nextLine();
+                    if (line.equalsIgnoreCase("reset")) {
+                        X = 1;
+                        Y = 1;
+                        hp = 100;
+                        hunger = 0;
+                        persiki = 0;
+                        nektarin = 0;
+                        d = '\0';
+                        line = "\0";
+                        money = 100;
+                        nektarin_effect = false;
+                        dragonTame = false;
+                        k = 1;
+                        sword = 0;
+                        dragonhp = 1000;
+                    }
+                    if (line.equalsIgnoreCase("checkpoint")) {
+                        saving();
+                    }
+                }
+                if (k - 50 == effectK) {
+                    nektarin_effect = false;
+                    System.out.println("Эффект от нектарина закончился");
                 }
             }
         }
